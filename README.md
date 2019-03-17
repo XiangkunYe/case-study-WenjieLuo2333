@@ -21,6 +21,7 @@ case-study-WenjieLuo2333 created by GitHub Classroom
   #### Frameworks and libraries used in Keras
   ```CNTK```/```Tensorflow```/```Theano```<br>
   ```numpy```<br>
+  ```cuDNN``(For gpu acceleration.)<br>
   ![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Install_Requirements_Keras.png)<br>
   Quote from [Keras Team](https://github.com/keras-team/keras/tree/master/keras/backend)
   
@@ -33,16 +34,16 @@ Due to different backends they use, although I didn't find the specific document
 Software architecture including:<br> a. how would you add / edit functionality if you wanted to? How would one use this project from external projects, or is it only usable as a standalone program?<br>b.What parts of the software are asynchronous (if any)?
 <br>c.Please make diagrams as appropriate for your explanation<br>d.How are separation of concerns and information hiding handled?<br>e.What architectural patterns are used<br>f.Does the project lean more towards object oriented or functional components<br>
 
-It offers users with flexible API to define their own functions like layers or loss functions. For example, I can always define my own loss function used in my AI model by K.function API.<br>
-Keras offers integrated common used neural network layer, optimizers,loss functions and so on. Users are free to design their own models and solve their own tasks.<br>
-The data in Keras are handled in tensors and flow from up to down. Thus there's no asynchronous part.<br>
-The diagram of a classic architecture of Keras.<br>![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Frameworks.png)<br>
-Data is handled in ways of tensor. And the final model consists of no data, thus there's no need for data security.
-I think the projects build on Keras should in an MVC architecture(model, view, controller).
-As is shown in diagrams, Keras can be divided in such modules based on their function. However, all the components in each module are written in an object-oriented way. Combined with the user experience, I think it's lean more towards object-oriented components.<br><br>
+a.Keras offers users with flexible API to define their own functions like layers or loss functions. For example, I can always define my own loss function used in my AI model by K.function API.<br> However, it's a high level lib compared with tensorflow to be more user friendly, so the flexibility is not that good like tensorflow.<br>
+Keras offers integrated common used neural network layer, optimizers,loss functions and so on. Users are free to design their own models and solve their own tasks.<br>It can not only be used as a stand alone project but can be used to solve nearly all the deep learning problems.
+b.The data in Keras are stored in tensors and flow from top to bottom of the model. Thus there's no asynchronous part.<br>
+c.The diagram of a classic architecture of Keras.<br>![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Frameworks.png)<br>
+d.Data is stored in tensors. Users train the model based on public datasets or their own datasets. Finally they deploy a model with weights and consists no data in the model.
+e.I think the projects build on Keras should in an MVC architecture(model, view, controller). Because users will always have a model to process, a view board to manipulate and a controller to call these two modules.
+f.As is shown in diagrams, Keras can be divided in such modules based on their function. However, all the components in each module are written as an object. Combined with the user experience, I think it's lean more towards object-oriented components.<br><br>
 
 ### Issue Analysis<br>
-The aim of the issue can be various. Most of them are using issues but not a requirement for architecture change. However, there're issues for system developing and helped developers to better organize their codes.<br>
+a.The aim of the issue can be various. Most of them are users bug issues looking for help but not a requirement for architecture change. b.However, there're issues for system developing and helped developers to better organize their codes.<br>
 For example, the [#649 Issue](https://github.com/keras-team/keras/issues/649) reminded the keras group that there's no code coverage metrics which has a side-effect on using. And finally, the group fixed the problem and works better on this project.<br>
 
 ### Demonstration Applicaitons<br>
