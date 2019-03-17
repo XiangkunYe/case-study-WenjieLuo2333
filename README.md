@@ -2,7 +2,7 @@
 case-study-WenjieLuo2333 created by GitHub Classroom
 
 ## Chosen Project: Keras<br>
-### Brief Intro<br>
+### Technology and Platform used for development<br>
   Keras is a high-level neural networks API, capable of running on top of Tensorflow, Theano, and CNTK.<sup>[[1]](https://towardsdatascience.com/introduction-to-deep-learning-with-keras-17c09e4f0eb2)</sup><br>
   In this case study, I will focus more on a tensorflow backend Keras.<br>
   #### Chosen Languase<br>
