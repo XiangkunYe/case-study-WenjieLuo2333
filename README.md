@@ -34,6 +34,25 @@ Software architecture including:<br> a. how would you add / edit functionality i
 <br>c.Please make diagrams as appropriate for your explanation<br>d.How are separation of concerns and information hiding handled?<br>e.What architectural patterns are used<br>f.Does the project lean more towards object oriented or functional components<br>
 
 It offers users with flexible API to define their own functions like layers or loss functions. For example, I can always define my own loss function used in my AI model by K.function API.<br>
-Keras offers integrated common used neural network layer,optimizors,loss funtions and so on. Users are free to design theirown models and solve theirown tasks.<br>
+Keras offers integrated common used neural network layer, optimizers,loss functions and so on. Users are free to design their own models and solve their own tasks.<br>
 The data in Keras are handled in tensors and flow from up to down. Thus there's no asynchronous part.<br>
-The diamgram of a classic architecture of Keras.<br>
+The diagram of a classic architecture of Keras.<br>![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Frameworks.png)<br>
+Data is handled in ways of tensor. And the final model consists of no data, thus there's no need for data security.
+I think the projects build on Keras should in an MVC architecture(model, view, controller).
+As is shown in diagrams, Keras can be divided in such modules based on their function. However, all the components in each module are written in an object-oriented way. Combined with the user experience, I think it's lean more towards object-oriented components.<br><br>
+
+### Issue Analysis<br>
+The aim of the issue can be various. Most of them are using issues but not a requirement for architecture change. However, there're issues for system developing and helped developers to better organize their codes.<br>
+For example, the [#649 Issue](https://github.com/keras-team/keras/issues/649) reminded the keras group that there's no code coverage metrics which has a side-effect on using. And finally, the group fixed the problem and works better on this project.<br>
+
+### Demonstration Applicaitons<br>
+I build a Generative Adversarial Network on Keras to generate Anime Images.See in [Anime Generator](https://github.com/WenjieLuo2333/Anime_Generator)<br> 
+The general process is to:<br>
+1. Process data with functions like Keras.prepocessing.load_img to preprocess data.<br>
+2. Build a network structure with Keras.layers.<br>
+3. Initialize the training scripts with modules like Keras.optimizer,Keras.losses and so on.<br>
+4. Start Training and get the finnal module.<br><br>
+The model I trained can generate relatively good images from random noise imput.<br>
+![image](https://github.com/WenjieLuo2333/Anime_Generator/blob/master/Res_DRAGAN/Predict_2.png)<br>
+And for Interpolation it seems that the entries of noise is realated to the feature of pictures.<br>
+![image](https://github.com/WenjieLuo2333/Anime_Generator/blob/master/Res_DRAGAN/inter_2.png)<br>
