@@ -20,6 +20,20 @@ case-study-WenjieLuo2333 created by GitHub Classroom
   Cmake and Bazel is used to build. However, according to the [Tensorflow Install Guide](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/cmake) that CMAKE build is deprecated for TensorFlow and Bazel is recommanded.GCC and [NVCC](https://en.wikipedia.org/wiki/NVIDIA_CUDA_Compiler) are needed to build a tensorflow based Keras with GPU acceleration.<br><br>
   #### Frameworks and libraries used in Keras
   ```CNTK```/```Tensorflow```/```Theano```<br>
-  ```numpy```
+  ```numpy```<br>
+  ![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Install_Requirements_Keras.png)<br>
   Quote from [Keras Team](https://github.com/keras-team/keras/tree/master/keras/backend)
   
+### Testing<br>
+Keras is using Travis-CI platform for test. To make sure the test meaningful, Keras has a visual system for its [code coverage matrics](https://coveralls.io/github/phreeza/keras).All the codes that are not covered by test are clearly displayed. And for now they have a code coverage at about 81%.<br>
+Due to different backends they use, although I didn't find the specific documentation, I believe Windows and Linux should be tested because all of the backends are tested according to [```.travis.yml```](https://github.com/keras-team/keras/blob/master/.travis.yml).
+<br><br>
+
+### Software Architecture<br>
+Software architecture including:<br> a. how would you add / edit functionality if you wanted to? How would one use this project from external projects, or is it only usable as a standalone program?<br>b.What parts of the software are asynchronous (if any)?
+<br>c.Please make diagrams as appropriate for your explanation<br>d.How are separation of concerns and information hiding handled?<br>e.What architectural patterns are used<br>f.Does the project lean more towards object oriented or functional components<br>
+
+It offers users with flexible API to define their own functions like layers or loss functions. For example, I can always define my own loss function used in my AI model by K.function API.<br>
+Keras offers integrated common used neural network layer,optimizors,loss funtions and so on. Users are free to design theirown models and solve theirown tasks.<br>
+The data in Keras are handled in tensors and flow from up to down. Thus there's no asynchronous part.<br>
+The diamgram of a classic architecture of Keras.<br>
