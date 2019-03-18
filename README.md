@@ -21,7 +21,7 @@ case-study-WenjieLuo2333 created by GitHub Classroom
   #### c.Frameworks and libraries used in Keras
   ```CNTK```/```Tensorflow```/```Theano```<br>
   ```numpy```<br>
-  ```cuDNN``(For gpu acceleration.)<br>
+  ```cuDNN```(For gpu acceleration.)<br>
   ![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Install_Requirements_Keras.png)<br>
   Quote from [Keras Team](https://github.com/keras-team/keras/tree/master/keras/backend)
   
@@ -34,8 +34,9 @@ Due to different backends they use, although I didn't find the specific document
 Software architecture including:<br> a. how would you add / edit functionality if you wanted to? How would one use this project from external projects, or is it only usable as a standalone program?<br>b.What parts of the software are asynchronous (if any)?
 <br>c.Please make diagrams as appropriate for your explanation<br>d.How are separation of concerns and information hiding handled?<br>e.What architectural patterns are used<br>f.Does the project lean more towards object oriented or functional components<br>
 
-a.Keras offers users with flexible API to define their own functions like layers or loss functions. For example, I can always define my own loss function used in my AI model by K.function API.<br> However, it's a high level lib compared with tensorflow to be more user friendly, so the flexibility is not that good like tensorflow.<br>
-Keras offers integrated common used neural network layer, optimizers,loss functions and so on. Users are free to design their own models and solve their own tasks.<br>It can not only be used as a stand alone project but can be used to solve nearly all the deep learning problems.
+a.Keras offers users with flexible API to define their own functions like layers or loss functions. For example, I can always define my own loss function used in my AI model by K.function API.<br>As it shown in picture<br>![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Loss_Define.png)<br> An API named K.function is used to define myown loss function. There's no build in loss function that have a gradient penalty like this. By define such a loss_dis, it can be used totally the same as other build in functions.<br> However, it's a high level lib compared with tensorflow to be more user friendly, so the flexibility is not that good like tensorflow.<br>
+
+Keras also offers integrated common used neural network layer, optimizers,loss functions and so on. Users are free to design their own models and solve their own tasks.<br>It can not only be used as a stand alone project but can also be used to solve nearly all the deep learning problems.
 b.The data in Keras are stored in tensors and flow from top to bottom of the model. Thus there's no asynchronous part.<br>
 c.The diagram of a classic architecture of Keras.<br>![image](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Frameworks.png)<br>
 d.Data is stored in tensors. Users train the model based on public datasets or their own datasets. Finally they deploy a model with weights and consists no data in the model.
