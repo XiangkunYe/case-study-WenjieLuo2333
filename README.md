@@ -26,7 +26,7 @@ case-study-WenjieLuo2333 created by GitHub Classroom
   Quote from [Keras Team](https://github.com/keras-team/keras/tree/master/keras/backend)
   
 ### Testing<br>
-Keras is using Travis-CI platform for test. To make sure the test meaningful, Keras has a visual system for its [code coverage matrics](https://coveralls.io/github/phreeza/keras).All the codes that are not covered by test are clearly displayed. And for now they have a code coverage at about 81%.<br>
+Keras is using Travis-CI platform for test. To make sure the test meaningful, Keras has a visual system for its code coverage matrics can be find easily in this [link](https://coveralls.io/github/phreeza/keras).All the codes that are not covered by test are clearly displayed. And for now they have a code coverage at about 81%.<br>
 Besides, as it shown in [test](https://github.com/keras-team/keras/tree/master/tests), the test procedure includes the modules like layers test,multiprocessing test and so on.(Complete list is shown in this [text file](https://github.com/ec500-software-engineering/case-study-WenjieLuo2333/blob/master/Keras_test.txt))<br>
 Due to different backends they use, although I didn't find the specific documentation, I believe Windows and Linux should be tested because all of the backends are tested according to [```.travis.yml```](https://github.com/keras-team/keras/blob/master/.travis.yml).
 <br><br>
