@@ -48,7 +48,7 @@ a.The aim of the issue can be various. Most of them are users bug issues looking
 For example, the [#649 Issue](https://github.com/keras-team/keras/issues/649) reminded the keras group that there's no code coverage metrics which has a side-effect on using. And finally, the group fixed the problem and works better on this project.<br>
 
 ### Demonstration Applicaitons<br>
-I build a Generative Adversarial Network on Keras to generate Anime Images.See in [Anime Generator](https://github.com/WenjieLuo2333/Anime_Generator)<br> 
+I build a Generative Adversarial Network on Keras to generate Anime Images.See the source code at [Anime Generator](https://github.com/WenjieLuo2333/Anime_Generator)<br> 
 The general process is to:<br>
 1. Process data with functions like Keras.prepocessing.load_img to preprocess data.<br>
 2. Build a network structure with Keras.layers.<br>
